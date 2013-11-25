@@ -32,7 +32,7 @@ Here is some screenshots of Postfix vManager.
 
 1. Login Page
 -------------
-![Alt text](login.png "Login Page")
+![Alt text](virtlogin.png "Login Page")
 
 2. Domains List
 ----------------
