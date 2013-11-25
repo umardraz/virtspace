@@ -42,9 +42,9 @@ Here is some screenshots of Postfix vManager.
 ----------------------
 ![Alt text](newvm.png "Users List")
 
-4. Groups List
----------------
-![Alt text](groups.png "Groups List")
+4. Distributions List
+---------------------
+![Alt text](distro.png "Groups List")
 
 2. How to Install
 =================
