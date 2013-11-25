@@ -1,14 +1,14 @@
 Virtspace
 =========
 
-Postfix vManager is a Web Based Management tool created for PostMMfix Mail Server Administration with PHP and MySQL
+Virtspace is a Web Based Management tool created for Linux KVM Administration with PHP-Libvirt and MongoDB
 
 What is it?
 ============
 
-The Postfix vManager provides an web based virtual mailbox administration system to allow Unix/Linux administrators to easily manage domains, parking domains, alias domain, mailboxes and forwardres. Postfix vManager is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 3.
+The Virtspace provides an web based linux KVM administration system to allow administrators to easily manage virtual machines, kvm servers, storages, virtual and bridge networks. Virtspace is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 3.
 
-Postfix vManager was written in PHP, It requires PHP 4 and above, Postfix, Dovecot and MySQL 
+Virtspace was written in PHP, It requires PHP 4 and above, libvirt library for php and MongoDB as backend database.
 
 1. Features
 ===========
