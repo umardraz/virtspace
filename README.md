@@ -1,5 +1,5 @@
-Postfix-vManager
-================
+Virtspace
+=========
 
 Postfix vManager is a Web Based Management tool created for PostMMfix Mail Server Administration with PHP and MySQL
 
@@ -38,9 +38,9 @@ Here is some screenshots of Postfix vManager.
 ----------------
 ![Alt text](servers.png "Domains List")
 
-3. Users List
--------------
-![Alt text](users.png "Users List")
+3. New Virtual Machine
+----------------------
+![Alt text](newvm.png "Users List")
 
 4. Groups List
 ---------------
