@@ -34,7 +34,7 @@ Here is some screenshots of Postfix vManager.
 -------------
 ![Alt text](virtlogin.png "Login Page")
 
-2. Domains List
+2. Virtual Machines List
 ----------------
 ![Alt text](domains.png "Domains List")
 
