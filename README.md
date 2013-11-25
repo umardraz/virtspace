@@ -13,22 +13,22 @@ Virtspace was written in PHP, It requires PHP 4 and above, libvirt library for p
 1. Features
 ===========
 
-Standard and enhanced features from Postfix vManager includes:
+Standard and enhanced features from Virtspace includes:
 
 * Super admin user level with full access.
-* Domain Admin user level with access only to assigned domains and their mailboxes and aliases.
-* Domain admins can create and modify SubDomain admins and mailboxes.
+* Domain live and offline migration, with central storage.
+* Domain modification, adding removing network, virtual drives, snapshots.
 * JQuery Datatable throughout for quick in browser searching and pagination.
-* Create, modify and delete domains including the mailboxes and aliases, a non-super admin can create per-domain; Activate / deactivate mailboxes and aliases at the click of a button.
-* Facility for users (mailbox owners) to change their password.
-* Parking Domain support.
-* Alias domain with virtual alias mailboes support.
-* Autoresponder (Vacation) support enabled.
+* Predefine templates help for creating new domain very quickly.
+* LVM and any Directory based storage supported.
+* Image cloning within storage and outside of the storage.
+* Virtual networking fully supported.
+* Virtual machine searching.
 
 2. Screenshots
 ==============
 
-Here is some screenshots of Postfix vManager.
+Here is some screenshots of Virtspace
 
 1. Login Page
 -------------
@@ -49,10 +49,8 @@ Here is some screenshots of Postfix vManager.
 2. How to Install
 =================
 
-**FreeBSD:** https://github.com/umardraz/Postfix-vManager/blob/master/Postfix-vManager-FreeBSD.rst
+**Ubuntu:**  https://github.com/umardraz/virtspace/blob/master/Virtspace-Ubuntu.rst
 
-**Ubuntu:**  https://github.com/umardraz/Postfix-vManager/blob/master/Postfix-vManager-Ubuntu.rst
-
-**CentOS:**  https://github.com/umardraz/Postfix-vManager/blob/master/Postfix-vManager-CentOS.rst
+**CentOS:**  https://github.com/umardraz/virtspace/blob/master/Virtspace-CentOS.rst
 
 **For any bug Report or suggesions:** Please email me umar_draz@yahoo.com
