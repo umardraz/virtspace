@@ -22,7 +22,7 @@ Standard and enhanced features from Virtspace includes:
 * Predefine templates help for creating new domain very quickly.
 * LVM and any Directory based storage supported.
 * Image cloning within storage and outside of the storage.
-* Virtual networking fully supported.
+* Virtual networking with (Nat, Static and Routing) fully supported.
 * Virtual machine searching.
 
 2. Screenshots
