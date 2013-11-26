@@ -288,6 +288,7 @@ Edit the inc/config.inc.php and change the **admin** user password as well as th
 After that just restart the apache service and access the virtspace.
 
 ::
+
   sudo service apache2 restart
   
 Brwose the url e.g. http://virtspace.yourdomain.com/, and enjoy :)
