@@ -53,7 +53,7 @@ When complete, run the following command to check mongodb working or not
 
 That's All MongoDB server has been installed, now lest install Apache and PHP.
 
-4. WebServer Installation
+3. WebServer Installation
 =========================
 
 Apache is easily installed by entering the following command.
@@ -105,20 +105,20 @@ We will use /var/www/vamanager for our document root of Postfix vManager, now cr
 
 ::
 
-  mkdir -p /var/www/vmanager
+  mkdir -p /var/www/virtspace
   chown -R www-data:www-data /var/www/
 
 We will create a simple virtual host configuration file that will instruct Apache to serve the contents of the directory /var/www/vmanager for any requests to example.yourdomain.com
 
 ::
 
-  sudo bash -c "cat >> /etc/apache2/sites-available/example.yourdomain.com <<EOF
+  sudo bash -c "cat >> /etc/apache2/sites-available/virtspace.yourdomain.com <<EOF
   <VirtualHost *:80>
-    ServerName example.yourdomain.com
+    ServerName virtspace.yourdomain.com
     ServerAlias yourdomain.com
     DocumentRoot /var/www/vmanager
-    ErrorLog /var/log/httpd/vmanager.error.log
-    CustomLog /var/log/httpd/vmanager.access.log combined
+    ErrorLog /var/log/httpd/virtspace.error.log
+    CustomLog /var/log/httpd/virtspace.access.log combined
   </VirtualHost>
   EOF"
 
@@ -133,10 +133,21 @@ Using the a2ensite command and restarting Apache will load the new configuration
 ::
 
   rm /etc/apache2/sites-enabled/000-default
-  sudo a2ensite example.yourdomain.com
+  sudo a2ensite virtspace.yourdomain.com
   sudo service apache2 restart
 
-If everything has gone according to plan you should be able to open a browser and navigate to example.yourdomain.com where you will see a directory listing.
+If everything has gone according to plan you should be able to open a browser and navigate to virtspace.yourdomain.com where you will see a directory listing.
+
+3. PHP-libvirt Installation
+=========================
+
+Apache is easily installed by entering the following command.
+
+::
+
+  sudo apt-get install apache2 -y
+
+
 
 Now let's start the installation of Postfix vManager
 
