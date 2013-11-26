@@ -123,7 +123,7 @@ We will therefore install PHP with the following command.
 
 ::
 
-  yum install php php-mysql php-pdo php-mysqli php-mbstring php-pear
+  yum install gcc php php-mysql php-pdo php-mysqli php-mbstring php-pear
 
 Once PHP5 is installed we'll need to tune the configuration file located in /etc/php.ini to enable more descriptive errors, logging, and better performance. These modifications provide a good starting point if you're unfamiliar with PHP configuration.
 
@@ -141,6 +141,13 @@ Make sure that the following values are set, and relevant lines are uncommented 
   memory_limit = 64M
   register_globals = Off
   max_execution_time = 1200
+
+Nex we need to install MongoDB driver for php
+
+::
+  
+  pecl install mongo
+  echo “extension=mongo.so” >> /etc/php.ini
 
 Whenver you change anything in php.ini file then you need to rstart apache server.
 
@@ -175,7 +182,7 @@ After installing mongo extension we need to enable this into php.
 
 ::
 
-  echo 'extension=libvirt-php.so' > /etc/php5/conf.d/libvirt.ini
+  echo 'extension=libvirt-php.so' >> /etc/php.ini
   sudo service apache2 restart
 
 Web server installation is now completed, next we need to configure all KVM hosts, so SSH to all of your KVM host and do the following only on KVM hosts machines.
