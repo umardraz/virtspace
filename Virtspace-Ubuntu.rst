@@ -103,14 +103,14 @@ We will therefore install PHP with the following command.
 Configuring the Apache Virtual Host
 -----------------------------------
 
-We will use /var/www/virtspace for our document root of Postfix vManager, now create the directory and apply proper permission
+We will use /var/www/virtspace for our document root of Virtspace, now create the directory and apply proper permission
 
 ::
 
   mkdir -p /var/www/virtspace
   chown -R www-data:www-data /var/www/
 
-We will create a simple virtual host configuration file that will instruct Apache to serve the contents of the directory /var/www/vmanager for any requests to example.yourdomain.com
+We will create a simple virtual host configuration file that will instruct Apache to serve the contents of the directory /var/www/virtspace for any requests to example.yourdomain.com
 
 ::
 
