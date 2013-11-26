@@ -1,10 +1,10 @@
 ==========================================================
-  Postfix vManager Ubuntu 12.04 LTS Server
+  Virtspace Ubuntu 12.04 LTS Server
 ==========================================================
 
 :Version: 2.0
-:Source: https://www.box.com/s/y4yx5fossu8l8i4as8vd
-:Keywords: Postfix Mail server management, Cyrus-SASL, Dovecot, MySQL, Virtual Domains, Alias Domains
+:Source: https://www.box.com/
+:Keywords: Linux KVM administration, PHP-libvirt, MongoDB, PHP, libvirt, Ubuntu
 
 Author
 ==========
@@ -17,18 +17,17 @@ Table of Contents
 ::
 
   1. Requirements
-  2. MySQL Server Installation
-  3. Postfix and Dovecot
-  4. Web Server Installation
-  5. Postfix vManager Installation
-  6. DKIM (Domain Keys)
+  2. MongoDB Installation
+  3. Webserver Installation
+  4. php-libvirt installation
+  5. libvirt configuration
 
 1. Requirements
 ===============
 
-* Postfix which supports virtual domains and mailboxes including vda patch.
-* a compatible IMAP/POP3 server (such as Dovecot and Courier), but in this howto we will only discuss Dovecot
-* PHP v4 and above with PDO and mysqli supported.
+* Virtspace based on php-libvirt for managing kvm virtulization.
+* MongoDB database server required, we will see later on how to installl.
+* PHP v4 and above with pecl mongo supported.
 
 2. MySQL Server Installation
 ============================
