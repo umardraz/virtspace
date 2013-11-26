@@ -96,7 +96,7 @@ We will therefore install PHP with the following command.
 
 ::
 
-  sudo apt-get install php5 php5-curl php5-gd php5-mcrypt php5-mysql -y
+  sudo apt-get install build-essential php5-curl php5-gd php5-mcrypt php5-mysql php-pear -y
 
 Configuring the Apache Virtual Host
 -----------------------------------
@@ -134,6 +134,19 @@ Using the a2ensite command and restarting Apache will load the new configuration
 
   rm /etc/apache2/sites-enabled/000-default
   sudo a2ensite virtspace.yourdomain.com
+  sudo service apache2 restart
+
+Next we need to install the mongo library for php using pecl.
+
+::
+  
+  pecl install mongo
+  
+After installing mongo extension we need to enable this into php.
+
+::
+
+  echo 'extension=mongo.so' > /etc/php5/conf.d/mongo.ini
   sudo service apache2 restart
 
 If everything has gone according to plan you should be able to open a browser and navigate to virtspace.yourdomain.com where you will see a directory listing.
