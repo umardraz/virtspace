@@ -181,7 +181,7 @@ After installing mongo extension we need to enable this into php.
 
 Web server installation is now completed, next we need to configure all KVM hosts, so SSH to all of your KVM host and do the following only on KVM hosts machines.
 
-First delete the default virtual bridge
+First delete the **default virtual bridge**
 
 ::
 
@@ -198,7 +198,23 @@ For live migration uncomment these lines in libvirt settings.
   listen_tcp = 1
   auth_tcp = "none"
 
-Edit libvirtd_opts variable in the /etc/init/libvirt-bin.conf file:
+Edit **libvirtd_opts** variable in the /etc/init/libvirt-bin.conf file:
+
+::
+
+  env libvirtd_opts="-d -l"
+  
+Edit the same field in **/etc/default/libvirt-bin** and again, set it to:
+
+::
+
+  libvirtd_opts="-d -l"
+  
+Restart the libvirt service to apply the changes:
+
+::
+
+  service libvirt-bin restart
 
 
 5. Virtspace
