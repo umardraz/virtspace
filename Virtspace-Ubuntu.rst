@@ -151,6 +151,17 @@ After installing mongo extension we need to enable this into php.
   echo 'extension=mongo.so' > /etc/php5/conf.d/mongo.ini
   sudo service apache2 restart
 
+For big volumes clone, migrate we need to update the **max_execution_time** parameter of php.ini so update the default time with the following.
+
+::
+
+  nano /etc/php5/fpm/php.ini
+  max_execution_time = 1200
+
+Next we need to restart the apache service.
+
+sudo service apache2 restart
+
 If everything has gone according to plan you should be able to open a browser and navigate to virtspace.yourdomain.com where you will see a directory listing.
 
 4. PHP-libvirt Installation
@@ -183,7 +194,7 @@ After installing mongo extension we need to enable this into php.
 
 Web server installation is now completed, next we need to configure all KVM hosts, so SSH to all of your KVM host and do the following only on KVM hosts machines.
 
-3. KVM Hosts configuration
+5. KVM Hosts configuration
 ===========================
 
 First delete the **default virtual bridge**
