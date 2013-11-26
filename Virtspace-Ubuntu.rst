@@ -172,6 +172,12 @@ After installting the dependencies packages, we need to download the php-libvirt
   make
   make install
 
+After installing mongo extension we need to enable this into php.
+
+::
+
+  echo 'extension=libvirt-php.so' > /etc/php5/conf.d/libvirt.ini
+  sudo service apache2 restart
 
 Now let's start the installation of Postfix vManager
 
