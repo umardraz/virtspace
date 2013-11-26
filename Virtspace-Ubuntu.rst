@@ -179,7 +179,27 @@ After installing mongo extension we need to enable this into php.
   echo 'extension=libvirt-php.so' > /etc/php5/conf.d/libvirt.ini
   sudo service apache2 restart
 
-Now let's start the installation of Postfix vManager
+Web server installation is now completed, next we need to configure all KVM hosts, so SSH to all of your KVM host and do the following only on KVM hosts machines.
+
+First delete the default virtual bridge
+
+::
+
+  virsh net-destroy default
+  virsh net-undefine default
+
+For live migration uncomment these lines in libvirt settings.
+
+::
+  
+  nano /etc/libvirt/libvirtd.conf 
+
+  listen_tls = 0
+  listen_tcp = 1
+  auth_tcp = "none"
+
+Edit libvirtd_opts variable in the /etc/init/libvirt-bin.conf file:
+
 
 5. Virtspace
 ============
