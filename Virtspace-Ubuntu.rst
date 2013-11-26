@@ -254,7 +254,7 @@ After changing in the network configuration file, you need to restart the networ
 7. Virtspace
 ============
 
-First download virtspace source from this url :Source: https://app.box.com/s/oyve7lnn63vngf6xxhvm
+First download virtspace source from this url https://app.box.com/s/oyve7lnn63vngf6xxhvm
 
 After downloading the virtspace.tar.gz just extract the source. 
 
