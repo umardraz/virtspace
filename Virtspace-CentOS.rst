@@ -164,7 +164,7 @@ For php-libivrt first we need to install some dependencies packages.
 
 ::
 
-  sudo apt-get install git libvirt-dev xsltproc libxml2-dev libxml2 libxml2-utils lvm2 python-libvirt python-numpy
+  yum install git libvirt-devel xsltproc libxml2-devel libxml2 libxml2-utils lvm2 libvirt-python numpy
 
 After installting the dependencies packages, we need to download the php-libvirt from the following link and then compile it.
 
