@@ -52,6 +52,12 @@ Issue the following command (as root or with sudo) to install the latest stable 
 
 When this command completes, you have successfully installed MongoDB!
 
+Start the mongod process by issuing the following command (as root or with sudo):
+
+::
+
+  service mongod start
+
 3. WebServer Installation
 =========================
 
