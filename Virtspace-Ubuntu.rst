@@ -155,7 +155,7 @@ For big volumes clone, migrate we need to update the **max_execution_time** para
 
 ::
 
-  nano /etc/php5/fpm/php.ini
+  nano /etc/php5/apache2/php.ini
   max_execution_time = 1200
 
 Next we need to restart the apache service.
