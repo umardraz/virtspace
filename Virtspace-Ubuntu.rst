@@ -138,15 +138,26 @@ Using the a2ensite command and restarting Apache will load the new configuration
 
 If everything has gone according to plan you should be able to open a browser and navigate to virtspace.yourdomain.com where you will see a directory listing.
 
-3. PHP-libvirt Installation
+4. PHP-libvirt Installation
 =========================
 
-Apache is easily installed by entering the following command.
+For php-libivrt first we need to install some dependencies packages.
 
 ::
 
-  sudo apt-get install apache2 -y
+  sudo apt-get install git libvirt-dev xsltproc libxml2-dev libxml2 libxml2-utils lvm2 python-libvirt python-numpy
 
+After installting the dependencies packages, we need to download the php-libvirt from the following link and then compile it.
+
+::
+
+  wget http://libvirt.org/sources/php/libvirt-php-0.4.8.tar.gz
+  tar xzvpf libvirt-php-0.4.8.tar.gz
+
+  cd libvirt-php-0.4.8
+  ./configure --disable-option-checking --enable-feature=yes
+  make
+  make install
 
 
 Now let's start the installation of Postfix vManager
