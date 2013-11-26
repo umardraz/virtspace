@@ -34,26 +34,23 @@ Table of Contents
 2. MongoDB Server Installation
 ============================
 
-Installing MongoDB Server on Ubuntu is a quick and easy process. In classic fashion let’s get the process underway by updating our system.
+Create a **/etc/yum.repos.d/mongodb.repo** file to hold the following configuration information for the MongoDB repository.
 
 ::
 
-  sudo apt-get update
-  sudo apt-get upgrade
+  [mongodb]
+  name=MongoDB Repository
+  baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/
+  gpgcheck=0
+  enabled=1
 
-Accept any updates that are available to you and then install MongoDB Server like so:
+Issue the following command (as root or with sudo) to install the latest stable version of MongoDB and the associated tools:
   
 ::
 
-  sudo apt-get install mongodb
+  yum install mongo-10gen mongo-10gen-server
 
-When complete, run the following command to check mongodb working or not
-
-::
-
-  sudo mongo
-
-That's All MongoDB server has been installed, now lest install Apache and PHP.
+When this command completes, you have successfully installed MongoDB!
 
 3. WebServer Installation
 =========================
