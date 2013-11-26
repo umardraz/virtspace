@@ -62,35 +62,57 @@ Apache is easily installed by entering the following command.
 
 ::
 
-  sudo apt-get install apache2 -y
+  yum install httpd
 
-During the install you may notice the following warning:
+**Configure Name-based Virtual Hosts**
 
-::
+There are different ways to set up Virtual Hosts, however we recommend the method below. By default, Apache listens on all IP addresses available to it.
 
-  apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1 for ServerName
+Now we will create virtual host entries for virtspace.yourdomain.com site that we need to host with this server. Here is this.
 
-This comes from Apache itself and means that it was unable to determine its own name. The Apache server needs to know its own name under certain situations. For example, when creating redirection URLs.
-
-To stop this warning we can create an Apache config file to store the name. You can set this as either a hostname or a FQDN, but here we will use this as only "localhost"
+**File:** /etc/httpd/conf.d/vhost.conf
 
 ::
 
-  echo "ServerName localhost" > /etc/apache2/conf.d/servername.conf
+  NameVirtualHost *:80
+  <VirtualHost *:80>
+     ServerAdmin webmaster@yourdomain.com
+     ServerName yourdomain.com
+     ServerAlias virtspace.yourdomain.com
+     DocumentRoot /var/www/virtspace
+     ErrorLog /var/log/httpd/error.log
+     CustomLog /var/log/httpd/access.log combined
+  </VirtualHost>
+
+Before you can use the above configuration you'll need to create the specified directories. For the above configuration, you can do this with the following commands:
+
+::
+
+  mkdir -p /var/www/virtspace
+
+Virtspace depends on url rewriting for SEO purpose. In order to take advantage of this feature we need to edit httpd.conf file as follows.
+
+Edit /etc/httpd/conf/httpd.conf file and change **AllowOverride None** to **AllowOverride All** under / directory e.g.
+
+::
+
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride All
+  </Directory>
+
+After you've set up your virtual hosts, issue the following command to run Apache for the first time:
+
+::
+
+  /etc/init.d/httpd restart
   
-In order for this change to take effect restart Apache. The warning should no longer appear.
+If you want to run Apache by default when the system boots, which is a typical setup, execute the following command:
 
 ::
 
-  sudo service apache2 restart
-
-Virtspace depends on url rewriting for SEO purpose. In order to take advantage of this feature we need to enable Apache's rewrite module with the a2enmod command.
-
-::
-
-  sudo a2enmod rewrite
-  sudo service apache2 restart
-
+  /sbin/chkconfig --levels 235 httpd on
+  
 Installing PHP
 -----------------
 
@@ -98,70 +120,31 @@ We will therefore install PHP with the following command.
 
 ::
 
-  sudo apt-get install build-essential php5-curl php5-gd php5-mcrypt php5-mysql php-pear -y
+  yum install php php-mysql php-pdo php-mysqli php-mbstring php-pear
 
-Configuring the Apache Virtual Host
------------------------------------
+Once PHP5 is installed we'll need to tune the configuration file located in /etc/php.ini to enable more descriptive errors, logging, and better performance. These modifications provide a good starting point if you're unfamiliar with PHP configuration.
 
-We will use /var/www/virtspace for our document root of Virtspace, now create the directory and apply proper permission
+Make sure that the following values are set, and relevant lines are uncommented (comments are lines beginning with a semi-colon (;)):
 
-::
-
-  mkdir -p /var/www/virtspace
-  chown -R www-data:www-data /var/www/
-
-We will create a simple virtual host configuration file that will instruct Apache to serve the contents of the directory /var/www/virtspace for any requests to example.yourdomain.com
+**File:** /etc/php.ini
 
 ::
 
-  sudo bash -c "cat >> /etc/apache2/sites-available/virtspace.yourdomain.com <<EOF
-  <VirtualHost *:80>
-    ServerName virtspace.yourdomain.com
-    ServerAlias yourdomain.com
-    DocumentRoot /var/www/virtspace
-    ErrorLog /var/log/httpd/virtspace.error.log
-    CustomLog /var/log/httpd/virtspace.access.log combined
-  </VirtualHost>
-  EOF"
-
-As you notice, I have use /var/log/httpd directory for our application logs. We need to create this directory, before enabling our virtualhost.
-
-::
-
-  mkdir /var/log/httpd
-
-Using the a2ensite command and restarting Apache will load the new configuration file. But before this we will remove the existing link from site-enabled directory.
-
-::
-
-  rm /etc/apache2/sites-enabled/000-default
-  sudo a2ensite virtspace.yourdomain.com
-  sudo service apache2 restart
-
-Next we need to install the mongo library for php using pecl.
-
-::
-  
-  pecl install mongo
-  
-After installing mongo extension we need to enable this into php.
-
-::
-
-  echo 'extension=mongo.so' > /etc/php5/conf.d/mongo.ini
-  sudo service apache2 restart
-
-For big volumes clone, migrate we need to update the **max_execution_time** parameter of php.ini so update the default time with the following.
-
-::
-
-  nano /etc/php5/apache2/php.ini
+  error_reporting = E_COMPILE_ERROR|E_RECOVERABLE_ERROR|E_ERROR|E_CORE_ERROR
+  display_errors = Off
+  log_errors = On
+  error_log = /var/log/php.log
+  max_execution_time = 300
+  memory_limit = 64M
+  register_globals = Off
   max_execution_time = 1200
 
-Next we need to restart the apache service.
+Whenver you change anything in php.ini file then you need to rstart apache server.
 
-sudo service apache2 restart
+::
 
+  /etc/init.d/httpd restart
+  
 If everything has gone according to plan you should be able to open a browser and navigate to virtspace.yourdomain.com where you will see a directory listing.
 
 4. PHP-libvirt Installation
