@@ -254,24 +254,25 @@ After changing in the network configuration file, you need to restart the networ
 7. Virtspace
 ============
 
-First download postfix virtspace source from this url :Source: https://app.box.com/s/oyve7lnn63vngf6xxhvm
+First download virtspace source from this url :Source: https://app.box.com/s/oyve7lnn63vngf6xxhvm
 
-After downloading the postfix-vmanager-2.0.tar.gz just extract the source. 
+After downloading the virtspace.tar.gz just extract the source. 
 
-Then first remove the /var/www/vmanager directory and move extracted source into /var/www/vmanager/ let's do it.
+Then first remove the /var/www/virtspace directory and move extracted source into /var/www/virtspace/ let's do it.
 
 ::
 
-  tar xzvpf postfix-vmanager-2.0.tar.gz
-  rm -rf /var/www/vmanager
-  mv postfix-vmanager-2.0 /var/www/vmanager
+  cd /tmp/
+  tar xzvpf virtspace.tar.gz
+  rm -rf /var/www/virtspace
+  mv virtspace /var/www/virtspace
   
 Next restore the database, with the following command
 
 ::
 
-  cd /var/www/vmanager/  
-  mysql -uroot -proot_pass vmanager < setup/vmanager.sql
+  cd /var/www/virtspace/setup/  
+  mongorestore virtspace
 
 5.1. Configure Postfix vManager
 ----------------------
