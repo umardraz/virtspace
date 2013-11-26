@@ -82,7 +82,7 @@ In order for this change to take effect restart Apache. The warning should no lo
 
   sudo service apache2 restart
 
-Postfix vManager depends on url rewriting for SEO purpose. In order to take advantage of this feature we need to enable Apache's rewrite module with the a2enmod command.
+Virtspace depends on url rewriting for SEO purpose. In order to take advantage of this feature we need to enable Apache's rewrite module with the a2enmod command.
 
 ::
 
@@ -101,7 +101,7 @@ We will therefore install PHP with the following command.
 Configuring the Apache Virtual Host
 -----------------------------------
 
-We will use /var/www/vamanager for our document root of Postfix vManager, now create the directory and apply proper permission
+We will use /var/www/virtspace for our document root of Postfix vManager, now create the directory and apply proper permission
 
 ::
 
@@ -116,7 +116,7 @@ We will create a simple virtual host configuration file that will instruct Apach
   <VirtualHost *:80>
     ServerName virtspace.yourdomain.com
     ServerAlias yourdomain.com
-    DocumentRoot /var/www/vmanager
+    DocumentRoot /var/www/virtspace
     ErrorLog /var/log/httpd/virtspace.error.log
     CustomLog /var/log/httpd/virtspace.access.log combined
   </VirtualHost>
