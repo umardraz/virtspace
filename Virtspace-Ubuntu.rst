@@ -20,7 +20,9 @@ Table of Contents
   2. MongoDB Installation
   3. Webserver Installation
   4. php-libvirt installation
-  5. libvirt configuration
+  5. KVM Hosts configuration
+  6. Bridge Networking
+  7. Virtspace Installation
 
 1. Requirements
 ===============
@@ -152,7 +154,7 @@ After installing mongo extension we need to enable this into php.
 If everything has gone according to plan you should be able to open a browser and navigate to virtspace.yourdomain.com where you will see a directory listing.
 
 4. PHP-libvirt Installation
-=========================
+===========================
 
 For php-libivrt first we need to install some dependencies packages.
 
@@ -180,6 +182,9 @@ After installing mongo extension we need to enable this into php.
   sudo service apache2 restart
 
 Web server installation is now completed, next we need to configure all KVM hosts, so SSH to all of your KVM host and do the following only on KVM hosts machines.
+
+3. KVM Hosts configuration
+===========================
 
 First delete the **default virtual bridge**
 
@@ -216,8 +221,10 @@ Restart the libvirt service to apply the changes:
 
   service libvirt-bin restart
 
+6. Bridge Networking
+====================
 
-5. Virtspace
+7. Virtspace
 ============
 
 First download postfix virtspace source from this url :Source: https://app.box.com/s/oyve7lnn63vngf6xxhvm
