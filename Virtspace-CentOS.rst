@@ -271,13 +271,6 @@ Then first remove the /var/www/virtspace directory and move extracted source int
   rm -rf /var/www/virtspace
   mv virtspace /var/www/virtspace
 
-  cd /var/www/virtspace/noVNC/
-  ln -s images/favicon.ico .
-  
-  cd /var/www/virtspace/noVNC/
-  ln -s websockify websockify.py
-  ln -s websockify wsproxy.py
-  
 Next restore the database, with the following command
 
 ::
