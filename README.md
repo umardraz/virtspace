@@ -20,7 +20,7 @@ Standard and enhanced features from Virtspace includes:
 * Domain modification, adding removing network, virtual drives, snapshots.
 * JQuery Datatable throughout for quick in browser searching and pagination.
 * Predefine templates help for creating new domain very quickly.
-* LVM and any Directory based storage supported.
+* LVM, Ceph, Glusterfs and any Directory based storage supported.
 * Image cloning within storage and outside of the storage.
 * Virtual networking with (Nat, Static and Routing) fully supported.
 * Virtual machine searching.
