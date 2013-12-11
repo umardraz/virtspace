@@ -217,7 +217,7 @@ Restart the libvirt service to apply the changes:
 
 ::
 
-  service libvirt-bin restart
+  service libvirtd restart
 
 6. Bridge Networking
 ====================
