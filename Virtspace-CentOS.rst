@@ -108,7 +108,7 @@ After you've set up your virtual hosts, issue the following command to run Apach
 
 ::
 
-  /etc/init.d/httpd restart
+  service httpd restart
   
 If you want to run Apache by default when the system boots, which is a typical setup, execute the following command:
 
@@ -153,7 +153,7 @@ Whenver you change anything in php.ini file then you need to rstart apache serve
 
 ::
 
-  /etc/init.d/httpd restart
+  service httpd restart
   
 If everything has gone according to plan you should be able to open a browser and navigate to virtspace.yourdomain.com where you will see a directory listing.
 
@@ -178,12 +178,11 @@ After installting the dependencies packages, we need to download the php-libvirt
   make
   make install
 
-After installing mongo extension we need to enable this into php.
+After installing libvirt library we need to restart httpd service.
 
 ::
 
-  echo 'extension=libvirt-php.so' >> /etc/php.ini
-  sudo service apache2 restart
+  service httpd restart
 
 Web server installation is now completed, next we need to configure all KVM hosts, so SSH to all of your KVM host and do the following only on KVM hosts machines.
 
