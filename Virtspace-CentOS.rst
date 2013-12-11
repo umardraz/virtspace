@@ -290,6 +290,7 @@ After that just restart the apache service and access the virtspace.
 
 ::
 
+  setsebool httpd_can_network_connect 1
   service httpd restart
   
 Brwose the url e.g. http://virtspace.yourdomain.com/, and enjoy :)
