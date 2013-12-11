@@ -109,13 +109,7 @@ After you've set up your virtual hosts, issue the following command to run Apach
 ::
 
   service httpd restart
-  
-If you want to run Apache by default when the system boots, which is a typical setup, execute the following command:
 
-::
-
-  /sbin/chkconfig --levels 235 httpd on
-  
 Installing PHP
 -----------------
 
