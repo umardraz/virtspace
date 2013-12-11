@@ -215,31 +215,41 @@ Restart the libvirt service to apply the changes:
 6. Bridge Networking
 ====================
 
-For virtspace working corectly you need to configure bridge networking on each **KVM Host**. The bridge network should start with **br-** string. Following is the example of my KVM hosts bridge configuration.
+For virtspace working corectly you need to configure bridge networking on each **KVM Host**. The bridge network should start with **br-** string. First we need to install bridge utils.
 
 ::
 
-  # The primary network interface
-  auto eth0
-  iface eth0 inet manual
+  yum install bridge-utils 
 
-  auto br-net
-  iface br-net inet static
-    address 192.168.1.20
-    netmask 255.255.255.0
-    gateway 192.168.2.1
-    dns-nameservers 208.67.220.220
-    bridge_ports eth0
-    bridge_fd 9
-    bridge_hello 2
-    bridge_maxage 12
-    bridge_stp off
-    
+Following is the example of my KVM hosts bridge configuration.
+
+::
+
+  nano /etc/sysconfig/network-scripts/ifcfg-eth0 
+  
+  DEVICE=eth0
+  TYPE=Ethernet
+  ONBOOT=yes
+  NM_CONTROLLED=yes
+  BRIDGE=br-net
+  
+  /etc/sysconfig/network-scripts/ifcfg-br-net 
+  
+  DEVICE=br-net
+  TYPE=Bridge
+  BOOTPROTO=static
+  DNS1=192.168.0.1
+  GATEWAY=192.168.0.1
+  IPADDR=192.168.0.100
+  NETMASK=255.255.255.0
+  ONBOOT=yes
+  SEARCH="example.com"
+
 After changing in the network configuration file, you need to restart the network services.
 
 ::
 
-  service networking restart
+  service network restart
 
 
 7. Virtspace
