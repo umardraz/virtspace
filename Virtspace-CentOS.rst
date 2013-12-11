@@ -123,7 +123,7 @@ We will therefore install PHP with the following command.
 
 ::
 
-  yum install gcc php php-mysql php-pdo php-mysqli php-mbstring php-pear
+  yum install gcc php php-mbstring php-pear
 
 Once PHP5 is installed we'll need to tune the configuration file located in /etc/php.ini to enable more descriptive errors, logging, and better performance. These modifications provide a good starting point if you're unfamiliar with PHP configuration.
 
