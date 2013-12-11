@@ -207,17 +207,11 @@ For live migration uncomment these lines in libvirt settings.
   listen_tcp = 1
   auth_tcp = "none"
 
-Edit **libvirtd_opts** variable in the /etc/init/libvirt-bin.conf file:
+Uncomment the line in the file /etc/sysconfig/libvirtd:
 
 ::
 
-  env libvirtd_opts="-d -l"
-  
-Edit the same field in **/etc/default/libvirt-bin** and again, set it to:
-
-::
-
-  libvirtd_opts="-d -l"
+  LIBVIRTD_ARGS="--listen"
   
 Restart the libvirt service to apply the changes:
 
