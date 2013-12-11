@@ -147,7 +147,7 @@ Nex we need to install MongoDB driver for php
 ::
   
   pecl install mongo
-  echo “extension=mongo.so” >> /etc/php.ini
+  echo "extension=mongo.so" >> /etc/php.ini
 
 Whenver you change anything in php.ini file then you need to rstart apache server.
 
