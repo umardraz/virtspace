@@ -233,7 +233,7 @@ Following is the example of my KVM hosts bridge configuration.
   NM_CONTROLLED=yes
   BRIDGE=br-net
   
-  /etc/sysconfig/network-scripts/ifcfg-br-net 
+  nano /etc/sysconfig/network-scripts/ifcfg-br-net
   
   DEVICE=br-net
   TYPE=Bridge
@@ -290,6 +290,6 @@ After that just restart the apache service and access the virtspace.
 
 ::
 
-  sudo service apache2 restart
+  service httpd restart
   
 Brwose the url e.g. http://virtspace.yourdomain.com/, and enjoy :)
