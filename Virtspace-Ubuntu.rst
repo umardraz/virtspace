@@ -98,7 +98,7 @@ We will therefore install PHP with the following command.
 
 ::
 
-  sudo apt-get install build-essential php5-curl php5-gd php5-mcryptphp-pear -y
+  sudo apt-get install build-essential php5-curl php5-gd php5-mcrypt php-pear -y
 
 Configuring the Apache Virtual Host
 -----------------------------------
