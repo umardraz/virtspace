@@ -98,7 +98,7 @@ We will therefore install PHP with the following command.
 
 ::
 
-  sudo apt-get install build-essential php5 php5-dev php5-curl php5-gd php5-mcrypt php-pear -y
+  sudo apt-get install build-essential php5 php5-dev php5-curl php5-gd php5-mcrypt php-pear php5-json -y
 
 Configuring the Apache Virtual Host
 -----------------------------------
@@ -148,7 +148,8 @@ After installing mongo extension we need to enable this into php.
 
 ::
 
-  echo 'extension=mongo.so' > /etc/php5/conf.d/mongo.ini
+  echo 'extension=mongo.so' > /etc/php5/mods-available/mongo.ini
+  ln -s /etc/php5/mods-available/mongo.ini /etc/php5/apache2/conf.d/
   sudo service apache2 restart
 
 For big volumes clone, migrate we need to update the **max_execution_time** parameter of php.ini so update the default time with the following.
@@ -189,7 +190,7 @@ After installing mongo extension we need to enable this into php.
 
 ::
 
-  echo 'extension=libvirt-php.so' > /etc/php5/conf.d/libvirt.ini
+  echo 'extension=libvirt-php.so' > /etc/php5/mods-available/libvirt.ini
   sudo service apache2 restart
 
 Web server installation is now completed, next we need to configure all KVM hosts, so SSH to all of your KVM host and do the following only on KVM hosts machines.
