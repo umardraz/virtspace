@@ -76,7 +76,7 @@ To stop this warning we can create an Apache config file to store the name. You 
 
 ::
 
-  echo "ServerName localhost" > /etc/apache2/conf.d/servername.conf
+  echo "ServerName localhost" > /etc/apache2/conf-enabled/servername.conf
   
 In order for this change to take effect restart Apache. The warning should no longer appear.
 
