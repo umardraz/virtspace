@@ -161,7 +161,9 @@ For big volumes clone, migrate we need to update the **max_execution_time** para
 
 Next we need to restart the apache service.
 
-sudo service apache2 restart
+::
+
+  sudo service apache2 restart
 
 If everything has gone according to plan you should be able to open a browser and navigate to virtspace.yourdomain.com where you will see a directory listing.
 
