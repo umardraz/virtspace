@@ -114,7 +114,7 @@ We will create a simple virtual host configuration file that will instruct Apach
 
 ::
 
-  sudo bash -c "cat >> /etc/apache2/sites-available/virtspace.yourdomain.com <<EOF
+  sudo bash -c "cat >> /etc/apache2/sites-available/virtspace.yourdomain.com.conf <<EOF
   <VirtualHost *:80>
     ServerName virtspace.yourdomain.com
     ServerAlias yourdomain.com
