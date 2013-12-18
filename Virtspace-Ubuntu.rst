@@ -78,17 +78,21 @@ To stop this warning we can create an Apache config file to store the name. You 
 
   echo "ServerName localhost" > /etc/apache2/conf-enabled/servername.conf
   
+Virtspace depends on url rewriting for SEO purpose. In order to take advantage of this feature we need to enable Apache's rewrite module with the a2enmod command.
+
+Edit /etc/apache2/apache2.conf file and change AllowOverride None to AllowOverride All under / and /var/ww directory e.g.
+
+::
+
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride All
+  </Directory
+
 In order for this change to take effect restart Apache. The warning should no longer appear.
 
 ::
 
-  sudo service apache2 restart
-
-Virtspace depends on url rewriting for SEO purpose. In order to take advantage of this feature we need to enable Apache's rewrite module with the a2enmod command.
-
-::
-
-  sudo a2enmod rewrite
   sudo service apache2 restart
 
 Installing PHP
