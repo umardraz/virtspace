@@ -95,12 +95,6 @@ Virtspace depends on url rewriting for SEO purpose. In order to take advantage o
 
   sudo a2enmod rewrite
 
-In order for this change to take effect restart Apache. The warning should no longer appear.
-
-::
-
-  sudo service apache2 restart
-
 Installing PHP
 -----------------
 
@@ -146,7 +140,6 @@ Using the a2ensite command and restarting Apache will load the new configuration
 
   rm /etc/apache2/sites-enabled/000-default
   sudo a2ensite virtspace.yourdomain.com
-  sudo service apache2 restart
 
 Next we need to install the mongo library for php using pecl.
 
@@ -160,7 +153,6 @@ After installing mongo extension we need to enable this into php.
 
   echo 'extension=mongo.so' > /etc/php5/mods-available/mongo.ini
   ln -s /etc/php5/mods-available/mongo.ini /etc/php5/apache2/conf.d/
-  sudo service apache2 restart
 
 For big volumes clone, migrate we need to update the **max_execution_time** parameter of php.ini so update the default time with the following.
 
@@ -169,7 +161,7 @@ For big volumes clone, migrate we need to update the **max_execution_time** para
   nano /etc/php5/apache2/php.ini
   max_execution_time = 1200
 
-Next we need to restart the apache service.
+In order for this change to take effect restart Apache. The warning should no longer appear.
 
 ::
 
