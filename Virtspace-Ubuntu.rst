@@ -89,6 +89,12 @@ Edit /etc/apache2/apache2.conf file and change AllowOverride None to AllowOverri
     AllowOverride All
   </Directory
 
+Virtspace depends on url rewriting for SEO purpose. In order to take advantage of this feature we need to enable Apache's rewrite module with the a2enmod command.
+
+::
+
+  sudo a2enmod rewrite
+
 In order for this change to take effect restart Apache. The warning should no longer appear.
 
 ::
