@@ -164,11 +164,8 @@ After installting the dependencies packages, we need to download the php-libvirt
 
 ::
 
-  wget http://libvirt.org/sources/php/libvirt-php-0.4.8.tar.gz
-  tar xzvpf libvirt-php-0.4.8.tar.gz
-
-  cd libvirt-php-0.4.8
-  ./configure --disable-option-checking --enable-feature=yes
+  git clone git://libvirt.org/libvirt-php.git
+  ./autogen.sh
   make
   make install
 
