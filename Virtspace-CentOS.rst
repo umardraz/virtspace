@@ -56,6 +56,7 @@ Start the mongod process by issuing the following command (as root or with sudo)
 
 ::
 
+  setsebool httpd_can_network_connect 1 # setsebool httpd_can_network_connect_db 1 
   service mongod start
 
 3. WebServer Installation
@@ -117,7 +118,7 @@ We will therefore install PHP with the following command.
 
 ::
 
-  yum install gcc php php-devel php-mbstring php-pear
+  yum install gcc php php-devel php-mbstring php-pear php-xml
 
 Once PHP5 is installed we'll need to tune the configuration file located in /etc/php.ini to enable more descriptive errors, logging, and better performance. These modifications provide a good starting point if you're unfamiliar with PHP configuration.
 
