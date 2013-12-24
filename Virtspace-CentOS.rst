@@ -56,7 +56,6 @@ Start the mongod process by issuing the following command (as root or with sudo)
 
 ::
 
-  setsebool httpd_can_network_connect 1 # setsebool httpd_can_network_connect_db 1 
   service mongod start
 
 3. WebServer Installation
