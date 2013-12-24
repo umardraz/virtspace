@@ -178,6 +178,18 @@ After installing libvirt library we need to restart httpd service.
 
 Web server installation is now completed, next we need to configure all KVM hosts, so SSH to all of your KVM host and do the following only on KVM hosts machines.
 
+Disable SELinux
+===============
+
+edit **/etc/selinux/config** and change the SELINUX line to SELINUX=disabled: 
+
+::
+
+  SELINUX=disabled
+  
+... and then reboot the system. 
+
+
 5. KVM Hosts configuration
 ===========================
 
