@@ -164,6 +164,7 @@ After installting the dependencies packages, we need to download the php-libvirt
 ::
 
   git clone git://libvirt.org/libvirt-php.git
+  cd libvirt-php
   ./autogen.sh
   make
   make install
