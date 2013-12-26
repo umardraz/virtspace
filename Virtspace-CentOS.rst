@@ -132,9 +132,8 @@ Make sure that the following values are set, and relevant lines are uncommented 
   log_errors = On
   error_log = /var/log/php.log
   max_execution_time = 300
-  memory_limit = 64M
+  memory_limit = 128M
   register_globals = Off
-  max_execution_time = 1200
 
 Nex we need to install MongoDB driver for php
 
